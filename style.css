@@ -1,0 +1,143 @@
+/*Style Guide Fonts*/
+@font-face {
+    font-family: "Poppins";
+    src: url(./assets/Poppins/Poppins-ExtraLight.ttf);
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(./assets/Poppins/Poppins-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(./assets/Poppins/Poppins-SemiBold.ttf);
+    font-weight: 600;
+}
+/*attribution*/
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+/*primary css rules*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Poppins";
+    font-size: 15px;
+    background-color: hsl(0, 0%, 98%);
+}
+header{
+    text-align: center;
+    min-width: 320px;
+    max-width: 550px;
+    padding: 4rem 2rem;
+}
+header h1{
+    font-weight: 200;
+    color: hsl(234, 12%, 34%);
+}
+header h1 span{
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+}
+header p{
+    font-weight: 400;
+    color: hsl(229, 6%, 66%);
+    margin: 1em;
+
+}
+/*Mobile layout*/
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+        "supervisor"
+        "team-builder"
+        "karma"
+        "calculator";
+    gap: 2em;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    height: auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0rem 0.5rem 1rem hsl(0, 0%, 78%);
+    padding: 1.5rem 2rem;
+}
+section.supervisor{
+    border-top: 5px solid hsl(180, 62%, 55%);
+}
+section.team-builder{
+    border-top: 5px solid hsl(0, 78%, 62%);
+}
+section.karma{
+    border-top: 5px solid hsl(34, 97%, 64%);
+}
+section.calculator{
+    border-top: 5px solid hsl(212, 86%, 64%);
+}
+section h2{
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+    padding: 0.5rem;
+    padding-bottom: .1rem;
+}
+section p{
+    color: hsl(229, 6%, 66%);
+    padding: 0.5rem;
+    padding-bottom: 3rem;
+}
+section img{
+    width: 4rem;
+    height: auto;
+    align-self: flex-end;
+}
+footer{
+    margin: 1rem;
+}
+/*Desktop layout*/
+@media (width > 1000px){
+    body{
+        justify-content: center;
+        align-items: space-around;
+    }
+    main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+            ".team-builder."
+            "supervisor team-builder calculator"
+            "supervisor karma calculator"
+            ". karma .";
+        gap: 2rem;
+        
+    }    
+    .supervisor{
+        grid-area: supervisor;
+    }
+    .team-builder{
+        grid-area: team-builder;
+    }
+    .karma{
+        grid-area: karma;
+    }
+    .calculator{
+        grid-area: calculator;
+    }
+}
