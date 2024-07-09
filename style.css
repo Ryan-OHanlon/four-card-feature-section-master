@@ -126,7 +126,6 @@ footer{
             "supervisor karma calculator"
             ". karma .";
         gap: 2rem;
-        
     }    
     .supervisor{
         grid-area: supervisor;
